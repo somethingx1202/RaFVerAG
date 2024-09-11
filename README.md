@@ -6,6 +6,8 @@ This is the implementation of Evidence Retrieval and Truthfulness Score Calculat
 ## Table of Contents
 
 - [Requirements](#requirements)
+- [Preparation](#preparation)
+- [Inference](#inference)
 
 ## Requirements
 
