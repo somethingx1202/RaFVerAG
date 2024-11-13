@@ -284,7 +284,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
     src.slurm.init_distributed_mode(args)
     main(args)
-    # 所以已经是预先retrieve好了。
+    # So retrieved already before computation.
     # cd retrieval_lm
     # python passage_retrieval.py \
     #     --model_name_or_path facebook/contriever-msmarco --passages psgs_w100.tsv \
@@ -302,10 +302,3 @@ if __name__ == "__main__":
     # passages_embeddings = "enwiki_2020_intro_only/enwiki_dec_2020_contriever_intro/*"
     # n_docs = 5
     # save_or_load_index = False
-    # 研究了一下发现这边n_docs=5是个重复的参数,因为程序耦合度高的原因。n_docs=5最好保持一致。
-
-    # 综合比较前面两者，setup_retriever_demo 就等价于全采用默认参数的passage_retrieval.py 并且参考前者(除了n_docs=5, save_or_load_index=False)的调用方式(save_or_load_index=True是指已经有了wikipedia_embeddings了,搜self.index我们会知晓)
-    
-
-
-    # LLM 其实只管生成special tokens, 生成后还要ranking, 参考 run_long_form_static.py和论文注释 其实开始生成的时候就不再retrieval了,所以我们只要在这边调用retrieval,然后递给LLM.
