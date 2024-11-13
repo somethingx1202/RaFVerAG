@@ -569,9 +569,9 @@ if __name__ == '__main__':
     parser.add_argument('--w_sup', default=1, type=int, required=False, help='weight of supportiveness score, default=1')
     parser.add_argument('--mode', default='adaptive_retrieval', type=str, required=False, help='Control if using retrieval or not, can be [always_retrieve|adaptive_retrieval|no_retrieval], default=adaptive_retrieval')
 
-    my_args = '--world_size 1'
-    args = parser.parse_args(my_args.split(' '))
-    # args = parser.parse_args() # if you want to use sys.argv that is the terminal argvs
+    # my_args = '--world_size 1'
+    # args = parser.parse_args(my_args.split(' '))
+    args = parser.parse_args() # if you want to use sys.argv that is the terminal argvs
     # print(args) # It's a namespace
     # namespace to dict
     py_argv = vars(args)

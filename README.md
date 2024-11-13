@@ -66,4 +66,4 @@ The project structure should be:
 
 ## Inference
 
-Please run ```python RaFVerAG_release.py``` for the prediction and evaluation on the FactCHD dataset.
+Please run ```python RaFVerAG_release.py``` for interactive evidence retrieval and truthfulness score calculation.
