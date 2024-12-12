@@ -18,7 +18,7 @@ pip install -r requirements.txt
 ```
 
 ## Preparation
-You need to (1) download the FactCHD data by yourself following the instruction; (2) download the Wikipedia preprocessed data [here](https://rafverag.s3.ap-southeast-1.amazonaws.com/psgs_w100.tsv) and place it in the ```retrieval_model``` directory (3) download the Wikipedia section embeddings by using ```bash download_wikipedia_embeddings.sh```
+You need to (1) download the FactCHD data by yourself following the instruction; (2) download the Wikipedia preprocessed data [here](https://rafverag.s3.ap-southeast-1.amazonaws.com/psgs_w100.tsv) and place it in the ```retrieval_model``` directory (3) download the Wikipedia section embeddings by using ```bash download_wikipedia_embeddings.sh```, Extract the files and retain only those named ```passages_**``` within the folder.
 
 
 The project structure should be:
