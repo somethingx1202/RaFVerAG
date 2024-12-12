@@ -341,7 +341,7 @@ def preprocess_input_data(dataset):
 
     retriever = Retriever({})
     # K = 10
-    retriever.setup_retriever_demo("facebook/contriever-msmarco", "./retrieval_lm/psgs_w100.tsv", "./retrieval_lm/wikipedia_embeddings/*",  n_docs=10, save_or_load_index=True)
+    retriever.setup_retriever_demo("facebook/contriever-msmarco", "./retrieval_model/psgs_w100.tsv", "./retrieval_model/wikipedia_embeddings/*",  n_docs=10, save_or_load_index=True)
     print('retriever-------------------done!')
     lst_docidx2evidences = []
     lst_threads = []
@@ -482,7 +482,7 @@ def process_an_assertion(retriever=None, an_assertion=None, tokenizer=None, llm_
     if retriever is None:
         retriever = Retriever({})
         # K = 10
-        retriever.setup_retriever_demo("facebook/contriever-msmarco", "./retrieval_lm/psgs_w100.tsv", "./retrieval_lm/wikipedia_embeddings/*",  n_docs=40, save_or_load_index=True)
+        retriever.setup_retriever_demo("facebook/contriever-msmarco", "./retrieval_model/psgs_w100.tsv", "./retrieval_model/wikipedia_embeddings/*",  n_docs=40, save_or_load_index=True)
         print('retriever-------------------done!')
     
     # 'The Gaussian distribution format is N(0, I).'
@@ -531,7 +531,7 @@ def process_an_assertion(retriever=None, an_assertion=None, tokenizer=None, llm_
 def demo_interactive_process_assertion(max_new_tokens=15, ndocs=10, world_size=4, dtype='half', threshold=0.5, use_seqscore=False, use_groundness=True, use_utility=False, w_rel=1, w_sup=1, w_use=1, mode='adaptive_retrieval', metric='accuracy'):
     retriever = Retriever({})
     # K = 10
-    retriever.setup_retriever_demo("facebook/contriever-msmarco", "./retrieval_lm/psgs_w100.tsv", "./retrieval_lm/wikipedia_embeddings/*",  n_docs=40, save_or_load_index=True)
+    retriever.setup_retriever_demo("facebook/contriever-msmarco", "./retrieval_model/psgs_w100.tsv", "./retrieval_model/wikipedia_embeddings/*",  n_docs=40, save_or_load_index=True)
     print('retriever-------------------done!')
 
     tokenizer = AutoTokenizer.from_pretrained('selfrag/selfrag_llama2_13b', download_dir="/scratch/prj/inf_elandi/.cache/huggingface/hub", padding_side="left")
